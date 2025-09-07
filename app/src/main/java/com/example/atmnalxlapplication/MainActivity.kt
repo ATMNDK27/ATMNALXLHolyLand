@@ -1,11 +1,14 @@
 package com.example.atmnalxlapplication
 
 import android.content.Context
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.provider.Telephony
 import android.util.AttributeSet
 import android.view.View
 import com.example.atmnalxlapplication.databinding.ActivityMainBinding
+import com.example.ui_compose.MainComposeActivity
 import com.example.util.ToastUtil
 
 class MainActivity : AppCompatActivity() {
@@ -20,8 +23,10 @@ class MainActivity : AppCompatActivity() {
 
         //监听点击事件
         mainBinding.apply {
-            showText.setOnClickListener {
+            testBtn.setOnClickListener {
                 ToastUtil.toastMessage(this@MainActivity,R.string.success_toast)
+                val intent = Intent(this@MainActivity, MainComposeActivity::class.java)
+                startActivity(intent)
             }
         }
     }
