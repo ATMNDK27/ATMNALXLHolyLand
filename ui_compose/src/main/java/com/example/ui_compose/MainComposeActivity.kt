@@ -36,16 +36,7 @@ class MainComposeActivity : ComponentActivity() {
                 Scaffold (modifier = Modifier.fillMaxSize()){ innerPadding ->
                     CreatElementText(testTextList, modifier = Modifier.padding(innerPadding))
                 }
-
             }
-//            AtmnAlXLApplicationTheme {
-//                Scaffold(modifier = Modifier.fillMaxSize()) { innerPadding ->
-//                    Greeting(
-//                        name = "Android",
-//                        modifier = Modifier.padding(innerPadding)
-//                    )
-//                }
-//            }
         }
     }
 }
