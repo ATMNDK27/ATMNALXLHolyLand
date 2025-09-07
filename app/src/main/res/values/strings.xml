@@ -3,4 +3,5 @@
 
 <!--    弹出弹窗消息字符-->
     <string name="success_toast">点击调用工具类成功</string>
+    <string name="jump_page">跳转</string>
 </resources>
