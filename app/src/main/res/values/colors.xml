@@ -2,4 +2,15 @@
 <resources>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
+
+<!--    白天主题色-->
+    <color name="theme_color">#6666CC</color>
+
+<!--    夜晚主题色-->
+    <color name="theme_night_color">#FF000000</color>
+
+<!--    底部导航栏颜色 -->
+    <color name="nav_selected">#6666CC</color>
+    <color name="nav_normal">#8a8a8a</color>
+
 </resources>

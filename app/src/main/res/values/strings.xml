@@ -1,7 +1,11 @@
 <resources>
     <string name="app_name">AtmnAlXLApplication</string>
 
-<!--    弹出弹窗消息字符-->
+    <!--    弹出弹窗消息字符-->
     <string name="success_toast">点击调用工具类成功</string>
     <string name="jump_page">跳转</string>
+    <string name="home">首页</string>
+    <string name="show">展示</string>
+    <string name="mark">记录</string>
+    <string name="setting">设置</string>
 </resources>

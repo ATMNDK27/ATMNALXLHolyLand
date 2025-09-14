@@ -1,14 +1,10 @@
 package com.example.atmnalxlapplication
 
-import android.content.Context
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.provider.Telephony
-import android.util.AttributeSet
-import android.view.View
+import androidx.core.graphics.toColorInt
 import com.example.atmnalxlapplication.databinding.ActivityMainBinding
-import com.example.ui_compose.MainComposeActivity
 import com.example.util.ToastUtil
 
 class MainActivity : AppCompatActivity() {
@@ -19,14 +15,24 @@ class MainActivity : AppCompatActivity() {
         //setContentView(R.layout.activity_main)
          mainBinding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(mainBinding.root)
-
+        var tag = false
 
         //监听点击事件
         mainBinding.apply {
             testBtn.setOnClickListener {
                 ToastUtil.toastMessage(this@MainActivity,R.string.success_toast)
-                val intent = Intent(this@MainActivity, MainComposeActivity::class.java)
+//                val intent = Intent(this@MainActivity, MainComposeActivity::class.java)
+                val intent = Intent(this@MainActivity, MainContainerActivity::class.java)
                 startActivity(intent)
+            }
+            changeBtn.setOnClickListener {
+                if (!tag){
+                    showText.setTextColor("#6666CC".toColorInt())
+                    tag = !tag
+                    return@setOnClickListener
+                }
+                showText.setTextColor("#c026d3".toColorInt())
+                tag = !tag
             }
         }
     }
