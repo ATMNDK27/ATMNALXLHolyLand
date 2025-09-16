@@ -8,6 +8,8 @@
 
 布局混用方法（来源于chat）
 
+exercise文件为练习验证文件
+
 ##  XML 里用 Compose
 
 在 **XML 布局**中嵌入 Compose，用 `ComposeView`：
@@ -43,3 +45,11 @@ fun LegacyXmlLayout() {
     )
 }
 ```
+
+
+
+
+
+## 导入第三方库
+
+- 

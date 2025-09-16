@@ -50,8 +50,12 @@ dependencies {
     androidTestImplementation("androidx.test.ext:junit:1.3.0")
     androidTestImplementation("androidx.test.espresso:espresso-core:3.7.0")
 
-//    引入工具类模块
+//    引入本地工具类模块
     implementation(project(":util"))
     implementation(project(":custom_component"))
     implementation(project(":ui_compose"))
+
+
+    //引入轮播图第三方库，进行动画变化学习
+    implementation("com.github.zhpanvip:BannerViewPager:3.5.17")
 }
