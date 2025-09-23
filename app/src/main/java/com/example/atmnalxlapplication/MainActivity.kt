@@ -5,7 +5,6 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.core.graphics.toColorInt
 import com.example.atmnalxlapplication.databinding.ActivityMainBinding
-import com.example.util.ToastUtil
 
 class MainActivity : AppCompatActivity() {
 
@@ -20,7 +19,7 @@ class MainActivity : AppCompatActivity() {
         //监听点击事件
         mainBinding.apply {
             testBtn.setOnClickListener {
-                ToastUtil.toastMessage(this@MainActivity,R.string.success_toast)
+//                ToastUtil.toastMessage(this@MainActivity,R.string.success_toast)
 //                val intent = Intent(this@MainActivity, MainComposeActivity::class.java)
                 val intent = Intent(this@MainActivity, MainContainerActivity::class.java)
                 startActivity(intent)

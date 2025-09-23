@@ -47,11 +47,24 @@ dependencies {
     implementation("androidx.constraintlayout:constraintlayout:2.2.1")
     implementation("androidx.activity:activity:1.11.0")
     testImplementation("junit:junit:4.13.2")
+    testImplementation("org.junit.jupiter:junit-jupiter:5.13.4")
     androidTestImplementation("androidx.test.ext:junit:1.3.0")
     androidTestImplementation("androidx.test.espresso:espresso-core:3.7.0")
 
-//    引入工具类模块
+//    引入本地工具类模块
     implementation(project(":util"))
     implementation(project(":custom_component"))
     implementation(project(":ui_compose"))
+
+
+    //引入轮播图第三方库，进行动画变化学习
+    implementation("com.github.zhpanvip:BannerViewPager:3.5.17")
+
+
+    //导入测试依赖 Mockito
+    testImplementation("org.mockito:mockito-core:5.20.0")
+    testImplementation("org.mockito:mockito-inline:5.20.0")
+    testImplementation("org.mockito:mockito-android:5.20.0")
+
+
 }
