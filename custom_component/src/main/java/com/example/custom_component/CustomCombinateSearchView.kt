@@ -28,6 +28,8 @@ class CustomCombinateSearchView @JvmOverloads constructor(
         context.obtainStyledAttributes(attrs,R.styleable.CustomCombinateSearchView).apply {
             serachHint = getString(R.styleable.CustomCombinateSearchView_search_hint)?:"请输入搜索内容"
             confirmText = getString(R.styleable.CustomCombinateSearchView_confirm_text) ?:"确认"
+
+            recycle()//必须回收，因为是从共享的对象，无法被gc回收
         }
 
 
@@ -69,6 +71,8 @@ class CustomCombinateSearchView @JvmOverloads constructor(
 
             })
         }
+
+
     }
 
 }
