@@ -40,17 +40,6 @@ android {
 }
 
 dependencies {
-
-    implementation("androidx.core:core-ktx:1.17.0")
-    implementation("androidx.appcompat:appcompat:1.7.1")
-    implementation("com.google.android.material:material:1.13.0")
-    implementation("androidx.constraintlayout:constraintlayout:2.2.1")
-    implementation("androidx.activity:activity:1.11.0")
-    testImplementation("junit:junit:4.13.2")
-    testImplementation("org.junit.jupiter:junit-jupiter:5.13.4")
-    androidTestImplementation("androidx.test.ext:junit:1.3.0")
-    androidTestImplementation("androidx.test.espresso:espresso-core:3.7.0")
-
 //    引入本地工具类模块
     implementation(project(":util"))
     implementation(project(":custom_component"))
@@ -66,5 +55,10 @@ dependencies {
     testImplementation("org.mockito:mockito-inline:5.20.0")
     testImplementation("org.mockito:mockito-android:5.20.0")
 
+    // 测试相关依赖只在测试用
+    testImplementation("junit:junit:4.13.2")
+    testImplementation("org.junit.jupiter:junit-jupiter:5.13.4")
+    androidTestImplementation("androidx.test.ext:junit:1.3.0")
+    androidTestImplementation("androidx.test.espresso:espresso-core:3.7.0")
 
 }
