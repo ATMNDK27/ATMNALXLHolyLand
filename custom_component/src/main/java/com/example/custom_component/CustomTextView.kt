@@ -14,7 +14,7 @@ import androidx.appcompat.widget.AppCompatTextView
 class CustomTextView @JvmOverloads constructor(
     context: Context,
     attrs: AttributeSet? = null,
-    defaultStyle: Int = 0
+    defaultStyle: Int = 0//主题样式默认值，没有这个指定样式时，系统去找这个样式作为默认样式
 ): AppCompatTextView(context, attrs, defaultStyle){
     init {
         attrs?.let {
