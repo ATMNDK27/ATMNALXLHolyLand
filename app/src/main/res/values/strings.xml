@@ -8,4 +8,9 @@
     <string name="show">展示</string>
     <string name="mark">记录</string>
     <string name="setting">设置</string>
+
+<!--    按钮文字-->
+    <string name="jump_custom">跳转到自定义视图</string>
+    <string name="jump_compose">跳转到compose组件</string>
+    <string name="jump_app">跳转到正式应用</string>
 </resources>

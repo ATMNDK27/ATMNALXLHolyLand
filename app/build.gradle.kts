@@ -49,6 +49,8 @@ dependencies {
     //引入轮播图第三方库，进行动画变化学习
     implementation("com.github.zhpanvip:BannerViewPager:3.5.17")
 
+    //导入jetpack扩展库 流式布局
+    implementation("com.google.android.flexbox:flexbox:3.0.0")
 
     //导入测试依赖 Mockito
     testImplementation("org.mockito:mockito-core:5.20.0")

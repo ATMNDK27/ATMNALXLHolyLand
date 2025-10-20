@@ -6,6 +6,7 @@ import android.os.Bundle
 import androidx.core.graphics.toColorInt
 import com.example.atmnalxlapplication.databinding.ActivityMainBinding
 import com.example.atmnalxlapplication.exercise.AnimationMainActivity
+import com.example.ui_compose.MainComposeActivity
 import com.example.util.startActivity
 
 class MainActivity : AppCompatActivity() {
@@ -20,21 +21,16 @@ class MainActivity : AppCompatActivity() {
 
         //监听点击事件
         mainBinding.apply {
-            testBtn.setOnClickListener {
-//                val intent = Intent(this@MainActivity, MainContainerActivity::class.java)
-//                startActivity(intent)
-               // startActivity<MainContainerActivity>()
+            testBtn1.setOnClickListener {
                 startActivity<AnimationMainActivity>()
             }
-            changeBtn.setOnClickListener {
-                if (!tag){
-                    showText.setTextColor("#6666CC".toColorInt())
-                    tag = !tag
-                    return@setOnClickListener
-                }
-                showText.setTextColor("#c026d3".toColorInt())
-                tag = !tag
+            testBtn2.setOnClickListener {
+                startActivity<MainComposeActivity>()
             }
+            testBtn3.setOnClickListener {
+                startActivity<MainContainerActivity>()
+            }
+
         }
     }
 
