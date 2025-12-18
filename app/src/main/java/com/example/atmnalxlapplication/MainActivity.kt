@@ -1,9 +1,7 @@
 package com.example.atmnalxlapplication
 
-import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import androidx.core.graphics.toColorInt
 import com.example.atmnalxlapplication.databinding.ActivityMainBinding
 import com.example.atmnalxlapplication.exercise.AnimationMainActivity
 import com.example.util.startActivity
@@ -16,25 +14,16 @@ class MainActivity : AppCompatActivity() {
         //setContentView(R.layout.activity_main)
          mainBinding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(mainBinding.root)
-        var tag = false
 
         //监听点击事件
         mainBinding.apply {
-            testBtn.setOnClickListener {
+        testBtn.setOnClickListener {
 //                val intent = Intent(this@MainActivity, MainContainerActivity::class.java)
 //                startActivity(intent)
                // startActivity<MainContainerActivity>()
                 startActivity<AnimationMainActivity>()
             }
-            changeBtn.setOnClickListener {
-                if (!tag){
-                    showText.setTextColor("#6666CC".toColorInt())
-                    tag = !tag
-                    return@setOnClickListener
-                }
-                showText.setTextColor("#c026d3".toColorInt())
-                tag = !tag
-            }
+
         }
     }
 

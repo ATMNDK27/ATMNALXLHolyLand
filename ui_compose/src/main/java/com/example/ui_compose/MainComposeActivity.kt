@@ -10,6 +10,8 @@ import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.lazy.LazyColumn
+import androidx.compose.foundation.lazy.items
 import androidx.compose.material3.ElevatedButton
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Scaffold
@@ -30,11 +32,16 @@ class MainComposeActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
-        val testTextList = listOf("你好","安德鲁")
+        // For a real app, this list should come from a ViewModel or a data layer.
+        val testTextList = listOf("你好", "安德鲁")
         setContent {
             AtmnAlXLApplicationTheme {
-                Scaffold (modifier = Modifier.fillMaxSize()){ innerPadding ->
-                    CreatElementText(testTextList, modifier = Modifier.padding(innerPadding))
+                Scaffold(modifier = Modifier.fillMaxSize()) { innerPadding ->
+                    // Renamed CreatElementText to GreetingList and applied padding here.
+                    GreetingList(
+                        nameList = testTextList,
+                        modifier = Modifier.padding(innerPadding)
+                    )
                 }
             }
         }
@@ -44,13 +51,21 @@ class MainComposeActivity : ComponentActivity() {
 @Composable
 fun Greeting(name: String, modifier: Modifier = Modifier) {
     var expanded by remember { mutableStateOf(false) }
+    // The main modifier from the caller is applied to the Surface, which is the root of this composable.
     Surface(
         color = MaterialTheme.colorScheme.primary,
-        modifier = modifier.padding(vertical = 4.dp, horizontal = 8.dp)) {
-        Row (modifier = Modifier.fillMaxWidth().padding(24.dp),
+        modifier = modifier.padding(vertical = 4.dp, horizontal = 8.dp)
+    ) {
+        Row(
+            modifier = Modifier
+                .fillMaxWidth()
+                .padding(24.dp),
             horizontalArrangement = Arrangement.Center,
-            verticalAlignment = Alignment.CenterVertically){
-            Column (modifier = modifier.weight(1f)){
+            verticalAlignment = Alignment.CenterVertically
+        ) {
+            // FIX: Removed the modifier parameter from here to avoid applying it twice.
+            // This Column's purpose is just to hold the text and take up the available space.
+            Column(modifier = Modifier.weight(1f)) {
                 Text(
                     text = "Hello $name!"
                 )
@@ -63,30 +78,34 @@ fun Greeting(name: String, modifier: Modifier = Modifier) {
 }
 
 @Composable
-fun ItemButton(switch: Boolean,onSwitchChange: (Boolean) -> Unit){
+fun ItemButton(switch: Boolean, onSwitchChange: (Boolean) -> Unit) {
     ElevatedButton(
         onClick = {
             onSwitchChange(!switch)
         }
     ) {
-        Text(if (switch)"确定" else "不确定")
+        Text(if (switch) "确定" else "不确定")
     }
 }
 
+// Renamed from CreatElementText for clarity and conventions.
 @Composable
-fun CreatElementText(nameList: List<String>, modifier: Modifier){
-        Column(modifier = Modifier.padding(vertical = 4.dp)) {
-            for (name in nameList){
-                Greeting(name,modifier)
-            }
+fun GreetingList(nameList: List<String>, modifier: Modifier = Modifier) {
+    // For displaying lists, LazyColumn is much more efficient than a Column in a loop,
+    // as it only composes and renders the items currently visible on screen.
+    LazyColumn(modifier = modifier.padding(vertical = 4.dp)) {
+        items(items = nameList) { name ->
+            Greeting(name = name)
         }
+    }
 }
 
-@Preview(showBackground = true ,widthDp = 320)
+@Preview(showBackground = true, widthDp = 320)
 @Composable
 fun GreetingPreview() {
-    val testTextList = listOf("你好","安德鲁")
+    val testTextList = listOf("你好", "安德鲁")
     AtmnAlXLApplicationTheme {
-        CreatElementText(testTextList, modifier = Modifier)
+        // Updated the preview to use the new GreetingList.
+        GreetingList(nameList = testTextList, modifier = Modifier)
     }
 }
