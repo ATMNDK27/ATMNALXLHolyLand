@@ -8,4 +8,8 @@
     <string name="show">展示</string>
     <string name="mark">记录</string>
     <string name="setting">设置</string>
+    <string name="route_five_jump">路由5跳转</string>
+    <string name="my_page_title">我的页面</string>
+    <string name="my_avatar">我的头像</string>
+    <string name="setting_clicked">点击设置按钮</string>
 </resources>

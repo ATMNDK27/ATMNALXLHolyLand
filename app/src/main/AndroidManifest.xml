@@ -22,6 +22,9 @@
             android:name=".MainContainerActivity"
             android:exported="false" />
         <activity
+            android:name=".MyActivity"
+            android:exported="false" />
+        <activity
             android:name=".MainActivity"
             android:exported="true">
             <intent-filter>

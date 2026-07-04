@@ -17,11 +17,14 @@ class MainActivity : AppCompatActivity() {
 
         //监听点击事件
         mainBinding.apply {
-        testBtn.setOnClickListener {
+            testBtn.setOnClickListener {
 //                val intent = Intent(this@MainActivity, MainContainerActivity::class.java)
 //                startActivity(intent)
-               // startActivity<MainContainerActivity>()
+                // startActivity<MainContainerActivity>()
                 startActivity<AnimationMainActivity>()
+            }
+            routeFiveBtn.setOnClickListener {
+                startActivity<MyActivity>()
             }
 
         }
